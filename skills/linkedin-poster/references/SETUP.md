@@ -126,6 +126,7 @@ It should print your LinkedIn profile name and confirm posting permission.
 |-------|--------------|-----|
 | `401 Unauthorized` | Invalid/expired token | Regenerate access token |
 | `403 Forbidden` | Missing `w_member_social` permission | Ensure "Share on LinkedIn" product is enabled in app |
+| Image upload `426`/`403` | Wrong endpoint/version (if using older skill) | **Skill fixed:** Uses `/v2/assets` with `LinkedIn-Version: 202308` – update skill to latest |
 | "Invalid redirect_uri" | Redirect URL mismatch | Add your callback URL to app's OAuth settings |
 | "Token expired" | 60-day token expired | Regenerate token manually or redo OAuth flow |
 | Cannot find products | App not reviewed/approved | "Share on LinkedIn" usually auto-approved; check app status |
