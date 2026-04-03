@@ -22,12 +22,13 @@ def upload_image(image_path: str, access_token: str, owner: str = "urn:li:person
         None if upload fails
     """
     try:
-        # 1. Register upload
-        register_url = "https://api.linkedin.com/rest/assets?action=registerUpload"
+        # 1. Register upload - use v2 endpoint
+        register_url = "https://api.linkedin.com/v2/assets?action=registerUpload"
         headers = {
             'Authorization': f'Bearer {access_token}',
             'Content-Type': 'application/json',
-            'LinkedIn-Version': '202401'
+            'LinkedIn-Version': '202308',
+            'X-Restli-Protocol-Version': '2.0.0'
         }
 
         # Get person URN from /me if needed
@@ -77,18 +78,14 @@ def upload_image(image_path: str, access_token: str, owner: str = "urn:li:person
 def get_person_id(access_token: str) -> Optional[str]:
     """Get the authenticated user's LinkedIn person ID."""
     try:
-        headers = {
-            'Authorization': f'Bearer {access_token}',
-            'X-Restli-Protocol-Version': '2.0.0'
-        }
         resp = requests.get(
-            'https://api.linkedin.com/v2/userinfo',
-            headers=headers,
+            'https://api.linkedin.com/v2/me',
+            headers={'Authorization': f'Bearer {access_token}'},
+            params={'projection': 'id'},
             timeout=10
         )
         if resp.status_code == 200:
-            data = resp.json()
-            return data.get('sub')
+            return resp.json().get('id')
         return None
     except Exception:
         return None
