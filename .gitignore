@@ -1,17 +1,28 @@
-# Temporary files
-temp_*.txt
-post_with_image.py
-*.jpg
-*.jpeg
-*.png
-*.log
-
-# Media inbound from OpenClaw
-.media/
-
-# Virtual environments
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
 venv/
-.env/
+.venv/
+env.bak/
+venv.bak/
+
+# OpenClaw / Skills
+*.skill
+/.media/
+/temp_*
+post_with_image.py
+
+# Secrets & credentials
+*.pem
+*.key
+secrets.json
+credentials.json
+config.json
+~/.linkedin/
 
 # IDE
 .vscode/
@@ -21,14 +32,5 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Linked credentials (security!)
-*.pem
-*.key
-secrets.json
-credentials.json
-config.json
-
-# Skill packaging
-*.skill
-dist/
-build/
+# Logs
+*.log
