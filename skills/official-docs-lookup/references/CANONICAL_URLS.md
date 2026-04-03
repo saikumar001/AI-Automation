@@ -37,7 +37,7 @@ Gradle,https://docs.gradle.org/current/userguide/
 
 # Go
 Go,https://pkg.go.dev/pkg/
-Gin,https://gin-gonic.com/docs/
+Gin,https://gin-gonic.com/en/docs/
 Echo,https://echo.labstack.com/guide
 
 # Ruby
@@ -45,7 +45,7 @@ Ruby,https://ruby-doc.org/core/
 Ruby on Rails,https://guides.rubyonrails.org/
 
 # PHP
-PHP,https://www.php.net/docs.php
+PHP,https://www.php.net/manual/en/
 Laravel,https://laravel.com/docs
 Symfony,https://symfony.com/doc/current/
 
@@ -72,7 +72,7 @@ Redis,https://redis.io/docs/
 SQLite,https://www.sqlite.org/docs.html
 
 # APIs & Services
-OpenAI,https://platform.openai.com/docs/api-reference
+OpenAI,https://developers.openai.com/api/docs
 Anthropic,https://docs.anthropic.com/claude/reference
 Google AI,https://ai.google.dev/docs
 Hugging Face,https://huggingface.co/docs
